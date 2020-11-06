@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="Piano.css">
+  </head>
+  <body>
+    <div>
+    <div class="container">
+      <kbd class="whiteKeys" id="A">A</kbd>
+      <kbd class="whiteKeys" id="S">S</kbd>
+      <kbd class="whiteKeys" id="D">D</kbd>
+      <kbd class="whiteKeys" id="F">F</kbd>
+      <kbd class="whiteKeys" id="G">G</kbd>
+      <kbd class="whiteKeys" id="H">H</kbd>
+      <kbd class="whiteKeys" id="J">J</kbd>
+    </div>
+
+    <div class="containerTwo">
+      <kbd class="blackKeys" id="W">W</kbd>
+      <kbd class="blackKeys" id="E">E</kbd>
+    </div>
+    <div class="containerThree">
+      <kbd class="blackKeys" id="T">T</kbd>
+      <kbd class="blackKeys" id="Y">Y</kbd>
+      <kbd class="blackKeys" id="U">U</kbd>
+    </div>
+  </div>
+    <script>
+        var millisecondsToWait = 300;
+
+
+        function animate(element, isWhite) {
+          if (isWhite == true) {
+            element.style.backgroundColor = "black";
+            element.style.color = "white";
+            setTimeout(function() {
+                element.style.backgroundColor = "white";
+                element.style.color = "black";
+              }, millisecondsToWait);
+          } else {
+            element.style.backgroundColor = "white";
+            element.style.color = "black";
+            setTimeout(function() {
+              element.style.backgroundColor = "black";
+              element.style.color = "white";
+            }, millisecondsToWait);
+          }
+        }
+
+
+
+        document.addEventListener("keypress", function(event) {
+          let isWhite = true;
+          let element;
+
+          if (event.code == "KeyA") {
+            let audio = new Audio("sounds/A.mp3");
+            audio.play();
+            element = document.getElementById("A");           
+          } else if (event.code == "KeyS") {
+            let audio = new Audio("sounds/S.mp3");
+            audio.play();
+            element = document.getElementById("S");
+          } else if (event.code == "KeyD") {
+            let audio = new Audio("sounds/D.mp3");
+            audio.play();
+            element = document.getElementById("D");
+          } else if (event.code == "KeyF") {
+            let audio = new Audio("sounds/F.mp3");
+            audio.play();
+            element = document.getElementById("F");
+          } else if (event.code == "KeyG") {
+            let audio = new Audio("sounds/G.mp3");
+            audio.play();
+            element = document.getElementById("G");
+          } else if (event.code == "KeyH") {
+            let audio = new Audio("sounds/H.mp3");
+            audio.play();
+            element = document.getElementById("H");
+          } else if (event.code == "KeyJ") {
+            let audio = new Audio("sounds/J.mp3");
+            audio.play();
+            element = document.getElementById("J");
+          } else if (event.code == "KeyW") {
+            let audio = new Audio("sounds/W.mp3");
+            audio.play();
+            element = document.getElementById("W");
+            isWhite = false;
+          } else if (event.code == "KeyE") {
+            let audio = new Audio("sounds/E.mp3");
+            audio.play();
+            element = document.getElementById("E");
+            isWhite = false;
+          } else if (event.code == "KeyT") {
+            let audio = new Audio("sounds/T.mp3");
+            audio.play();
+            element = document.getElementById("T");
+            isWhite = false;
+          } else if (event.code == "KeyY") {
+            let audio = new Audio("sounds/Y.mp3");
+            audio.play();
+            element = document.getElementById("Y");
+            isWhite = false;
+          } else if (event.code == "KeyU") {
+            let audio = new Audio("sounds/U.mp3");
+            audio.play();
+            element = document.getElementById("U");
+            isWhite = false;
+          } else {
+            console.log("other key was pressed");
+          }
+
+          animate(element, isWhite);
+        })
+    </script>
+  </body>
+</html>

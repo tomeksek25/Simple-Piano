@@ -1,0 +1,82 @@
+body {
+    background-color:rgb(228, 155, 20);
+}
+.whiteKeys {
+    background-color: white;
+    display: inline-block;
+    height: 200px;
+    width: 80px;
+    /*border-radius: 10%;*/
+    border: 3px solid wheat;
+    margin-left: -5px;
+}
+.blackKeys {
+    background-color:black;
+    color: white;
+    display: inline-block;
+    height: 150px;
+    width: 50px;
+    border: 3px solid grey;
+    margin-left: 25px;
+    /*position: absolute;
+    top: 0px;*/
+}
+
+
+.container {
+    
+    text-align: center;
+    padding-top: 15%;
+
+  }
+
+.containerTwo {
+    
+    text-align: center;
+    padding-top: 15.4%;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 417px;
+  }
+
+.containerThree {
+    
+    text-align: center;
+    padding-top: 15.4%;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    left: 670px;
+  }
+
+.whiteKeys:hover{
+    animation: white-key-animation 0.5s;
+}
+
+.blackKeys:hover{
+    animation: black-key-animation 0.5s;
+}
+@keyframes white-key-animation {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+@keyframes black-key-animation {
+    0% {
+        background-color: black;
+    }
+    50% {
+        background-color: grey;
+    }
+    100% {
+        background-color: white;
+    }
+}
